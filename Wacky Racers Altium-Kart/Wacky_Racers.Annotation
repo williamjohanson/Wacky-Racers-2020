@@ -1,0 +1,19 @@
+[DesignatorManager]
+
+[SheetNumberManager]
+SheetNumberOrder=Display Order
+SheetNumberMethod=Increasing
+DocumentName0=Buck_Reg.SchDoc
+UniqueIDPath0=
+SheetNumber0=4
+DocumentName1=H-Bridge.SchDoc
+UniqueIDPath1=
+SheetNumber1=3
+DocumentName2=MCU.SchDoc
+UniqueIDPath2=
+SheetNumber2=
+DocumentName3=RadioModule.SchDoc
+UniqueIDPath3=
+SheetNumber3=2
+
+

@@ -1,0 +1,12 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of PCB Document [hat_PCB.PcbDoc]
+   Generated File[hat_PCB.RUL]
+   Generated File[hat_PCB.EXTREP]
+   Generated File[hat_PCB.REP]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 9:26:01 AM On 16/03/2020

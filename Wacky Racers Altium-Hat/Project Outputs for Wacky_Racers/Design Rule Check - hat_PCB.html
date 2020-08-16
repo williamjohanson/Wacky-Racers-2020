@@ -1,0 +1,501 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD19\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">16/03/2020</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">9:24:00 AM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc" class="file"><acronym title="P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc">P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">47</td></tr>
+</table>
+</td>
+</table><a name="IDSQ3FQF3O4CVPKCGHY5SPJNYTQ4LJAET4K0VEGG3MUKBCLWAHYHH"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID3ORL1JMYIMSYBYRGZKGR3P4U2J2FTQW5PDGIARCKMG1JTVNYOVOD">Clearance Constraint (Gap=0.15mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWAK2PFJO5MCWO4YT0QQNPYTLULAXTWDBFNGJS3NM3OFO5CTHE0AF">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDQR4KVJO3GHOZDN3HVETMRDZNPEYOHCQ05VTCYNE4ROPKPXBKUOVB">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDHPJ4HU1LRZW4GJ5EBBGTJXAUQKWOERZTXIOWOTFJFOZEPN4NCGWB">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDXNKOEBVAFTAD3HO4UTBGW3YAH2P4RPUSRJKIGPLMW3XLFAPKTT">Width Constraint (Min=0.15mm) (Max=2mm) (Preferred=0.3mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4E3XLZQLRMOQFBGOVI2XAYQBGPC55V1W5VE2DMOQ2EJI1JXSGXSI">SMD To Corner (Distance=0.25mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAUDWIZEYECOQK1AZ2T4HBRN2FA0CQB4DUCF4PIK0ZNXO00D1IH">SMD To Plane Constraint (Distance=5mm) (All)</a></td>
+<td class="column2">39</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWKCTC5XLSCAMMZ3O0TNHX24UQG5HMQOTWBBVFBNW5L4ZKGEMNAGB">SMD Neck-Down Constraint (Percent=50%) (Disabled)(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJUX0PTHCTB4VDJTURCXWFIYXXOXHZCQOIR35SPBA2YMUMAPV2WMK">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDEMOPPGFXUIXEGASRHARWOPGHTIKQAIGTJ3QZWLMEXSIMNZDRHADC">Minimum Annular Ring (Minimum=0.1mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYLOJAWFRHKONM5CQEYCNHXEVUJX54OAL1XG350GIH3FIZN0BPBEO">Hole Size Constraint (Min=0.3mm) (Max=10mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDU1EE42N5QXGTG400OODDB00ENO11WJ55ZGM30WBQDMCKT1SP242G">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDEVYJV3ARR3JHP2VARQFVWZFRRJGBLAFAUBYBBUIW0G2NUDPXMORG">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</a></td>
+<td class="column2">5</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPTRZV1LBVDGDIVUKM5I4O0IW1PE0SLWQ34YCOZE4KDIEUXDFGYFD">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVORIRF5C02BYIJ4TYBUPBMP1HEKURK1QFLNQBHEGJYNYGOKEX51L">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDH0THLRHDOCRIEPIKGKPQLHNQO11TRSPYQQREYE0B52NDMXTXOFL">Net Antennae (Tolerance=1mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPITP0XVOQ0HSIZGVPZCBUANKGCGOUFGQNN0G0VBLNPTLMCN0NVQK">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDCHUEHSGDYAZ0O2OYYIB1G0QSKBIS1TYRXEZSBJB1R3UURMYAKZYK">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">47</td>
+</tr>
+</table><br><a name="IDAUDWIZEYECOQK1AZ2T4HBRN2FA0CQB4DUCF4PIK0ZNXO00D1IH"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">SMD To Plane Constraint (Distance=5mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=99999mil|Location2.X=143782.916mil|Location1.Y=-9.949mil|Location2.Y=15.004mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=99999mil|Location2.X=143782.916mil|Location1.Y=-9.949mil|Location2.Y=15.004mil|Absolute=True">SMD To Plane Constraint: Pad C1-2(23mm,78.8mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-193925.454mil|Location2.X=167781.962mil|Location1.Y=-9.949mil|Location2.Y=15.004mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-193925.454mil|Location2.X=167781.962mil|Location1.Y=-9.949mil|Location2.Y=15.004mil|Absolute=True">SMD To Plane Constraint: Pad C15-1(38.4mm,71.2mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=99999mil|Location2.X=143783.62mil|Location1.Y=-9.949mil|Location2.Y=15.004mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=99999mil|Location2.X=143783.62mil|Location1.Y=-9.949mil|Location2.Y=15.004mil|Absolute=True">SMD To Plane Constraint: Pad C18-2(18.6mm,78.2mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189359.513mil|Location2.X=-99962.092mil|Location1.Y=-13.492mil|Location2.Y=17.509mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189359.513mil|Location2.X=-99962.092mil|Location1.Y=-13.492mil|Location2.Y=17.509mil|Absolute=True">SMD To Plane Constraint: Pad C20-2(31.4mm,79mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189341.44mil|Location2.X=-99962.092mil|Location1.Y=-9.949mil|Location2.Y=15.004mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189341.44mil|Location2.X=-99962.092mil|Location1.Y=-9.949mil|Location2.Y=15.004mil|Absolute=True">SMD To Plane Constraint: Pad C2-1(27.4mm,81.5mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-193848.475mil|Location2.X=167820.451mil|Location1.Y=-9.949mil|Location2.Y=15.004mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-193848.475mil|Location2.X=167820.451mil|Location1.Y=-9.949mil|Location2.Y=15.004mil|Absolute=True">SMD To Plane Constraint: Pad C21-1(51mm,32.6mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189356.058mil|Location2.X=-99962.092mil|Location1.Y=-9.949mil|Location2.Y=15.004mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189356.058mil|Location2.X=-99962.092mil|Location1.Y=-9.949mil|Location2.Y=15.004mil|Absolute=True">SMD To Plane Constraint: Pad C22-1(51mm,34.4mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-193848.507mil|Location2.X=167820.435mil|Location1.Y=-9.949mil|Location2.Y=15.004mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-193848.507mil|Location2.X=167820.435mil|Location1.Y=-9.949mil|Location2.Y=15.004mil|Absolute=True">SMD To Plane Constraint: Pad C22-2(49.6mm,34.4mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189355.954mil|Location2.X=-99962.092mil|Location1.Y=-9.949mil|Location2.Y=15.004mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189355.954mil|Location2.X=-99962.092mil|Location1.Y=-9.949mil|Location2.Y=15.004mil|Absolute=True">SMD To Plane Constraint: Pad C23-2(51mm,37.5mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189359.577mil|Location2.X=-99962.092mil|Location1.Y=-13.492mil|Location2.Y=17.509mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189359.577mil|Location2.X=-99962.092mil|Location1.Y=-13.492mil|Location2.Y=17.509mil|Absolute=True">SMD To Plane Constraint: Pad C25-1(14.1mm,10.6mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=99999mil|Location2.X=143794.513mil|Location1.Y=-13.492mil|Location2.Y=17.509mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=99999mil|Location2.X=143794.513mil|Location1.Y=-13.492mil|Location2.Y=17.509mil|Absolute=True">SMD To Plane Constraint: Pad C25-2(14.1mm,9mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3297.138mil|Location2.X=3368.83mil|Location1.Y=5017.61mil|Location2.Y=5042.562mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3297.138mil|Location2.X=3368.83mil|Location1.Y=5017.61mil|Location2.Y=5042.562mil|Absolute=True">SMD To Plane Constraint: Between Pad DL1-2(44mm,82.7mm) on Top Side And Via (29mm,83.7mm) from Top Side to Bottom Side Actual Distance = 16.23mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3415.248mil|Location2.X=3486.94mil|Location1.Y=5037.295mil|Location2.Y=5062.248mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3415.248mil|Location2.X=3486.94mil|Location1.Y=5037.295mil|Location2.Y=5062.248mil|Absolute=True">SMD To Plane Constraint: Between Pad DL2-2(47mm,83.2mm) on Top Side And Via (29mm,83.7mm) from Top Side to Bottom Side Actual Distance = 18.514mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189364.021mil|Location2.X=-99962.092mil|Location1.Y=-18.216mil|Location2.Y=20.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189364.021mil|Location2.X=-99962.092mil|Location1.Y=-18.216mil|Location2.Y=20.85mil|Absolute=True">SMD To Plane Constraint: Pad H1-6(62.6mm,53.5mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-193811.187mil|Location2.X=167844.005mil|Location1.Y=-30.027mil|Location2.Y=30.028mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-193811.187mil|Location2.X=167844.005mil|Location1.Y=-30.027mil|Location2.Y=30.028mil|Absolute=True">SMD To Plane Constraint: Pad L2-2(16.6mm,9mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-190374.353mil|Location2.X=-99962.092mil|Location1.Y=-8.768mil|Location2.Y=14.168mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-190374.353mil|Location2.X=-99962.092mil|Location1.Y=-8.768mil|Location2.Y=14.168mil|Absolute=True">SMD To Plane Constraint: Pad R11-2(36.4mm,32.45mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-193930.044mil|Location2.X=167778.607mil|Location1.Y=-8.768mil|Location2.Y=14.168mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-193930.044mil|Location2.X=167778.607mil|Location1.Y=-8.768mil|Location2.Y=14.168mil|Absolute=True">SMD To Plane Constraint: Pad R17-1(51mm,39.1mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189360.065mil|Location2.X=-99962.092mil|Location1.Y=-13.492mil|Location2.Y=17.509mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189360.065mil|Location2.X=-99962.092mil|Location1.Y=-13.492mil|Location2.Y=17.509mil|Absolute=True">SMD To Plane Constraint: Pad R7-1(44.2mm,64.1mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189354.812mil|Location2.X=-99962.092mil|Location1.Y=-8.768mil|Location2.Y=14.168mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189354.812mil|Location2.X=-99962.092mil|Location1.Y=-8.768mil|Location2.Y=14.168mil|Absolute=True">SMD To Plane Constraint: Pad R8-2(29.4mm,70.7mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189364.762mil|Location2.X=-99962.092mil|Location1.Y=-19.398mil|Location2.Y=21.685mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189364.762mil|Location2.X=-99962.092mil|Location1.Y=-19.398mil|Location2.Y=21.685mil|Absolute=True">SMD To Plane Constraint: Pad S1-2(2.15mm,42.2mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189364.73mil|Location2.X=-99962.092mil|Location1.Y=-19.398mil|Location2.Y=21.685mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189364.73mil|Location2.X=-99962.092mil|Location1.Y=-19.398mil|Location2.Y=21.685mil|Absolute=True">SMD To Plane Constraint: Pad S3-2(2.15mm,37.7mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-193854.125mil|Location2.X=167815.511mil|Location1.Y=-7.586mil|Location2.Y=13.333mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-193854.125mil|Location2.X=167815.511mil|Location1.Y=-7.586mil|Location2.Y=13.333mil|Absolute=True">SMD To Plane Constraint: Pad T1-2(46.5mm,64.05mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2613.673mil|Location2.X=2665.486mil|Location1.Y=4258.358mil|Location2.Y=4272.221mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2613.673mil|Location2.X=2665.486mil|Location1.Y=4258.358mil|Location2.Y=4272.221mil|Absolute=True">SMD To Plane Constraint: Between Pad U1-18(26.475mm,63.25mm) on Top Side And Via (24.547mm,66.846mm) from Top Side to Bottom Side Actual Distance = 5.003mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-193944.182mil|Location2.X=167768.203mil|Location1.Y=-3.453mil|Location2.Y=10.41mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-193944.182mil|Location2.X=167768.203mil|Location1.Y=-3.453mil|Location2.Y=10.41mil|Absolute=True">SMD To Plane Constraint: Pad U1-45(34.25mm,54.475mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-190368.558mil|Location2.X=-99962.092mil|Location1.Y=-3.453mil|Location2.Y=10.41mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-190368.558mil|Location2.X=-99962.092mil|Location1.Y=-3.453mil|Location2.Y=10.41mil|Absolute=True">SMD To Plane Constraint: Pad U1-46(34.75mm,54.475mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-131187.805mil|Location2.X=199146.391mil|Location1.Y=-3.453mil|Location2.Y=10.41mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-131187.805mil|Location2.X=199146.391mil|Location1.Y=-3.453mil|Location2.Y=10.41mil|Absolute=True">SMD To Plane Constraint: Pad U1-58(37.525mm,60.75mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-193943.238mil|Location2.X=167768.675mil|Location1.Y=-3.453mil|Location2.Y=10.41mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-193943.238mil|Location2.X=167768.675mil|Location1.Y=-3.453mil|Location2.Y=10.41mil|Absolute=True">SMD To Plane Constraint: Pad U1-60(37.525mm,61.75mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189335.032mil|Location2.X=-99962.092mil|Location1.Y=-3.453mil|Location2.Y=10.41mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189335.032mil|Location2.X=-99962.092mil|Location1.Y=-3.453mil|Location2.Y=10.41mil|Absolute=True">SMD To Plane Constraint: Pad U1-7(32.75mm,65.525mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-190372.38mil|Location2.X=-99962.092mil|Location1.Y=-7.586mil|Location2.Y=13.333mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-190372.38mil|Location2.X=-99962.092mil|Location1.Y=-7.586mil|Location2.Y=13.333mil|Absolute=True">SMD To Plane Constraint: Pad U2-1(25.65mm,80.35mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189338.59mil|Location2.X=-99962.092mil|Location1.Y=-7.586mil|Location2.Y=13.333mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189338.59mil|Location2.X=-99962.092mil|Location1.Y=-7.586mil|Location2.Y=13.333mil|Absolute=True">SMD To Plane Constraint: Pad U2-2(25.65mm,81.3mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189337.862mil|Location2.X=-99962.092mil|Location1.Y=-7.586mil|Location2.Y=13.333mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189337.862mil|Location2.X=-99962.092mil|Location1.Y=-7.586mil|Location2.Y=13.333mil|Absolute=True">SMD To Plane Constraint: Pad U2-5(22.95mm,80.35mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2305.405mil|Location2.X=2368.835mil|Location1.Y=4903.831mil|Location2.Y=4924.75mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2305.405mil|Location2.X=2368.835mil|Location1.Y=4903.831mil|Location2.Y=4924.75mil|Absolute=True">SMD To Plane Constraint: Between Pad U3-1(18.75mm,79.75mm) on Top Side And Via (29.6mm,80.775mm) from Top Side to Bottom Side Actual Distance = 15.162mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-190371.86mil|Location2.X=-99962.092mil|Location1.Y=-7.586mil|Location2.Y=13.333mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-190371.86mil|Location2.X=-99962.092mil|Location1.Y=-7.586mil|Location2.Y=13.333mil|Absolute=True">SMD To Plane Constraint: Pad U3-2(19.7mm,79.75mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2380.209mil|Location2.X=2443.638mil|Location1.Y=4903.831mil|Location2.Y=4924.75mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2380.209mil|Location2.X=2443.638mil|Location1.Y=4903.831mil|Location2.Y=4924.75mil|Absolute=True">SMD To Plane Constraint: Between Pad U3-3(20.65mm,79.75mm) on Top Side And Via (29.6mm,80.775mm) from Top Side to Bottom Side Actual Distance = 10.112mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-190367.584mil|Location2.X=-99962.092mil|Location1.Y=-3.823mil|Location2.Y=9.993mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-190367.584mil|Location2.X=-99962.092mil|Location1.Y=-3.823mil|Location2.Y=9.993mil|Absolute=True">SMD To Plane Constraint: Pad U4-8(47.143mm,34.735mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=99999mil|Location2.X=143779.272mil|Location1.Y=-8.177mil|Location2.Y=13.751mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=99999mil|Location2.X=143779.272mil|Location1.Y=-8.177mil|Location2.Y=13.751mil|Absolute=True">SMD To Plane Constraint: Pad U6-1(36.7mm,77.25mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189354.694mil|Location2.X=-99962.092mil|Location1.Y=-8.177mil|Location2.Y=13.751mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189354.694mil|Location2.X=-99962.092mil|Location1.Y=-8.177mil|Location2.Y=13.751mil|Absolute=True">SMD To Plane Constraint: Pad U6-2(36.7mm,78.2mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189354.75mil|Location2.X=-99962.092mil|Location1.Y=-8.177mil|Location2.Y=13.751mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-189354.75mil|Location2.X=-99962.092mil|Location1.Y=-8.177mil|Location2.Y=13.751mil|Absolute=True">SMD To Plane Constraint: Pad U6-6(34.3mm,77.25mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-190375.867mil|Location2.X=-99962.092mil|Location1.Y=-11.13mil|Location2.Y=15.839mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=-190375.867mil|Location2.X=-99962.092mil|Location1.Y=-11.13mil|Location2.Y=15.839mil|Absolute=True">SMD To Plane Constraint: Pad U7-2(10.629mm,64.4mm) on Top Side Actual Distance = 2539.975mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDEVYJV3ARR3JHP2VARQFVWZFRRJGBLAFAUBYBBUIW0G2NUDPXMORG"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2991.438mil|Location2.X=2996.625mil|Location1.Y=4829.099mil|Location2.Y=4834.286mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2991.438mil|Location2.X=2996.625mil|Location1.Y=4829.099mil|Location2.Y=4834.286mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.097mm &lt; 0.1mm) Between Pad U6-1(36.7mm,77.25mm) on Top Side And Pad U6-2(36.7mm,78.2mm) on Top Side [Top Solder] Mask Sliver [0.097mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2991.438mil|Location2.X=2996.625mil|Location1.Y=4866.501mil|Location2.Y=4871.688mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2991.438mil|Location2.X=2996.625mil|Location1.Y=4866.501mil|Location2.Y=4871.688mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.097mm &lt; 0.1mm) Between Pad U6-2(36.7mm,78.2mm) on Top Side And Pad U6-3(36.7mm,79.15mm) on Top Side [Top Solder] Mask Sliver [0.097mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2896.95mil|Location2.X=2902.137mil|Location1.Y=4866.501mil|Location2.Y=4871.688mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2896.95mil|Location2.X=2902.137mil|Location1.Y=4866.501mil|Location2.Y=4871.688mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.097mm &lt; 0.1mm) Between Pad U6-4(34.3mm,79.15mm) on Top Side And Pad U6-5(34.3mm,78.2mm) on Top Side [Top Solder] Mask Sliver [0.097mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2922.603mil|Location2.X=2927.79mil|Location1.Y=4902.426mil|Location2.Y=4907.613mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2922.603mil|Location2.X=2927.79mil|Location1.Y=4902.426mil|Location2.Y=4907.613mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.022mm &lt; 0.1mm) Between Pad U6-4(34.3mm,79.15mm) on Top Side And Via (34.3mm,80.2mm) from Top Side to Bottom Side [Top Solder] Mask Sliver [0.022mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2896.95mil|Location2.X=2902.137mil|Location1.Y=4829.099mil|Location2.Y=4834.286mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2896.95mil|Location2.X=2902.137mil|Location1.Y=4829.099mil|Location2.Y=4834.286mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.097mm &lt; 0.1mm) Between Pad U6-5(34.3mm,78.2mm) on Top Side And Pad U6-6(34.3mm,77.25mm) on Top Side [Top Solder] Mask Sliver [0.097mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDPTRZV1LBVDGDIVUKM5I4O0IW1PE0SLWQ34YCOZE4KDIEUXDFGYFD"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3293.426mil|Location2.X=3304.676mil|Location1.Y=3064.658mil|Location2.Y=3075.908mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3293.426mil|Location2.X=3304.676mil|Location1.Y=3064.658mil|Location2.Y=3075.908mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.252mm &lt; 0.254mm) Between Arc (43.493mm,32.985mm) on Top Overlay And Pad U4-1(43.993mm,33.135mm) on Top Side [Top Overlay] to [Top Solder] clearance [0.252mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDPITP0XVOQ0HSIZGVPZCBUANKGCGOUFGQNN0G0VBLNPTLMCN0NVQK"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Board Clearance Constraint (Gap=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4089.476mil|Location2.X=4137.43mil|Location1.Y=3693.726mil|Location2.Y=3707.849mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4089.476mil|Location2.X=4137.43mil|Location1.Y=3693.726mil|Location2.Y=3707.849mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.5mm) Between Board Edge And Track (63.825mm,49mm)(64.05mm,49mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4089.476mil|Location2.X=4137.43mil|Location1.Y=3969.316mil|Location2.Y=3983.439mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4089.476mil|Location2.X=4137.43mil|Location1.Y=3969.316mil|Location2.Y=3983.439mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.5mm) Between Board Edge And Track (63.825mm,56mm)(64.05mm,56mm) on Top Overlay </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

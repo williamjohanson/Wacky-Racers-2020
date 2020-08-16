@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=hat_pcb-roundholes.txt|DrillLayers=gtl,gp1,gp2,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=hat_pcb-slotholes.txt|DrillLayers=gtl,gp1,gp2,gbl

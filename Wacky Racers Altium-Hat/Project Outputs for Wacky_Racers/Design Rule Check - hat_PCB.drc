@@ -1,0 +1,110 @@
+Protel Design System Design Rule Check
+PCB File : P:\ENG Documents\ENCE461\Wacky Racer\wacky-racers-2020\Wacky Racers Altium-Hat\hat_PCB.PcbDoc
+Date     : 16/03/2020
+Time     : 9:24:00 AM
+
+Processing Rule : Clearance Constraint (Gap=0.15mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.15mm) (Max=2mm) (Preferred=0.3mm) (All)
+Rule Violations :0
+
+Processing Rule : SMD To Corner (Distance=0.25mm) (All)
+Rule Violations :0
+
+Processing Rule : SMD To Plane Constraint (Distance=5mm) (All)
+   Violation between SMD To Plane Constraint: Pad C1-2(23mm,78.8mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad C15-1(38.4mm,71.2mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad C18-2(18.6mm,78.2mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad C20-2(31.4mm,79mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad C2-1(27.4mm,81.5mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad C21-1(51mm,32.6mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad C22-1(51mm,34.4mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad C22-2(49.6mm,34.4mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad C23-2(51mm,37.5mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad C25-1(14.1mm,10.6mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad C25-2(14.1mm,9mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Between Pad DL1-2(44mm,82.7mm) on Top Side And Via (29mm,83.7mm) from Top Side to Bottom Side Actual Distance = 16.23mm
+   Violation between SMD To Plane Constraint: Between Pad DL2-2(47mm,83.2mm) on Top Side And Via (29mm,83.7mm) from Top Side to Bottom Side Actual Distance = 18.514mm
+   Violation between SMD To Plane Constraint: Pad H1-6(62.6mm,53.5mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad L2-2(16.6mm,9mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad R11-2(36.4mm,32.45mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad R17-1(51mm,39.1mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad R7-1(44.2mm,64.1mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad R8-2(29.4mm,70.7mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad S1-2(2.15mm,42.2mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad S3-2(2.15mm,37.7mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad T1-2(46.5mm,64.05mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Between Pad U1-18(26.475mm,63.25mm) on Top Side And Via (24.547mm,66.846mm) from Top Side to Bottom Side Actual Distance = 5.003mm
+   Violation between SMD To Plane Constraint: Pad U1-45(34.25mm,54.475mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad U1-46(34.75mm,54.475mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad U1-58(37.525mm,60.75mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad U1-60(37.525mm,61.75mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad U1-7(32.75mm,65.525mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad U2-1(25.65mm,80.35mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad U2-2(25.65mm,81.3mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad U2-5(22.95mm,80.35mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Between Pad U3-1(18.75mm,79.75mm) on Top Side And Via (29.6mm,80.775mm) from Top Side to Bottom Side Actual Distance = 15.162mm
+   Violation between SMD To Plane Constraint: Pad U3-2(19.7mm,79.75mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Between Pad U3-3(20.65mm,79.75mm) on Top Side And Via (29.6mm,80.775mm) from Top Side to Bottom Side Actual Distance = 10.112mm
+   Violation between SMD To Plane Constraint: Pad U4-8(47.143mm,34.735mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad U6-1(36.7mm,77.25mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad U6-2(36.7mm,78.2mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad U6-6(34.3mm,77.25mm) on Top Side Actual Distance = 2539.975mm
+   Violation between SMD To Plane Constraint: Pad U7-2(10.629mm,64.4mm) on Top Side Actual Distance = 2539.975mm
+Rule Violations :39
+
+Processing Rule : SMD Neck-Down Constraint (Percent=50%) (Disabled)(All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=0.1mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.3mm) (Max=10mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)
+   Violation between Minimum Solder Mask Sliver Constraint: (0.097mm < 0.1mm) Between Pad U6-1(36.7mm,77.25mm) on Top Side And Pad U6-2(36.7mm,78.2mm) on Top Side [Top Solder] Mask Sliver [0.097mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.097mm < 0.1mm) Between Pad U6-2(36.7mm,78.2mm) on Top Side And Pad U6-3(36.7mm,79.15mm) on Top Side [Top Solder] Mask Sliver [0.097mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.097mm < 0.1mm) Between Pad U6-4(34.3mm,79.15mm) on Top Side And Pad U6-5(34.3mm,78.2mm) on Top Side [Top Solder] Mask Sliver [0.097mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.022mm < 0.1mm) Between Pad U6-4(34.3mm,79.15mm) on Top Side And Via (34.3mm,80.2mm) from Top Side to Bottom Side [Top Solder] Mask Sliver [0.022mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.097mm < 0.1mm) Between Pad U6-5(34.3mm,78.2mm) on Top Side And Pad U6-6(34.3mm,77.25mm) on Top Side [Top Solder] Mask Sliver [0.097mm]
+Rule Violations :5
+
+Processing Rule : Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)
+   Violation between Silk To Solder Mask Clearance Constraint: (0.252mm < 0.254mm) Between Arc (43.493mm,32.985mm) on Top Overlay And Pad U4-1(43.993mm,33.135mm) on Top Side [Top Overlay] to [Top Solder] clearance [0.252mm]
+Rule Violations :1
+
+Processing Rule : Silk to Silk (Clearance=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=1mm) (All)
+Rule Violations :0
+
+Processing Rule : Board Clearance Constraint (Gap=0mm) (All)
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.5mm) Between Board Edge And Track (63.825mm,49mm)(64.05mm,49mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.5mm) Between Board Edge And Track (63.825mm,56mm)(64.05mm,56mm) on Top Overlay 
+Rule Violations :2
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 47
+Waived Violations : 0
+Time Elapsed        : 00:00:01

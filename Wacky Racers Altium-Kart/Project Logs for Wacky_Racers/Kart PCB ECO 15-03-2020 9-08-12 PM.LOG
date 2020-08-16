@@ -1,0 +1,5 @@
+Added Member To Class: ClassName=MCU Member=Component C12 100nF
+Added Room: Name=Buck_Reg
+Added Room: Name=H-Bridge
+Added Room: Name=MCU
+Added Room: Name=RadioModule

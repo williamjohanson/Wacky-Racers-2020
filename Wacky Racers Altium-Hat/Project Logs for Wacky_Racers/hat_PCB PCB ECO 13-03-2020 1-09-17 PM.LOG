@@ -1,0 +1,126 @@
+Removed Pin From Net: NetName=5V Pin=C3-1
+Removed Pin From Net: NetName=GND Pin=C3-2
+Removed Pin From Net: NetName=NetC24_2 Pin=D1-2
+Removed Pin From Net: NetName=5V Pin=D3-2
+Removed Pin From Net: NetName=5V Pin=H1-1
+Removed Pin From Net: NetName=PA4 Pin=H4-2
+Removed Pin From Net: NetName=PB1 Pin=H4-3
+Removed Pin From Net: NetName=PA6 Pin=H4-4
+Removed Pin From Net: NetName=PB2 Pin=H4-5
+Removed Pin From Net: NetName=PB3 Pin=H4-7
+Removed Pin From Net: NetName=PB13 Pin=H4-13
+Removed Pin From Net: NetName=PB14 Pin=H4-15
+Removed Pin From Net: NetName=PA23 Pin=H4-17
+Removed Pin From Net: NetName=PA27 Pin=H4-19
+Removed Pin From Net: NetName=5V Pin=Q2-1
+Removed Pin From Net: NetName=VBATT Pin=Q2-2
+Removed Pin From Net: NetName=5V Pin=R1-2
+Removed Pin From Net: NetName=VDDIO Pin=R11-1
+Removed Pin From Net: NetName=IMU_SEL Pin=R11-2
+Removed Pin From Net: NetName=VDDIO Pin=R12-1
+Removed Pin From Net: NetName=SWCLK Pin=R12-2
+Removed Pin From Net: NetName=VDDIO Pin=R13-1
+Removed Pin From Net: NetName=SWDIO Pin=R13-2
+Removed Pin From Net: NetName=GND Pin=R14-1
+Removed Pin From Net: NetName=GND Pin=R15-1
+Removed Pin From Net: NetName=GND Pin=R16-1
+Removed Pin From Net: NetName=5V Pin=TP5-1
+Removed Pin From Net: NetName=PA27 Pin=U1-37
+Removed Pin From Net: NetName=LED_STRIP_EN Pin=U6-3
+Removed Pin From Net: NetName=LED_OUT Pin=U6-4
+Removed Pin From Net: NetName=3V3_RAD Pin=U7-1
+Change Component Footprint: Designator=H4 Old Footprint=3020-20-0300-00 New Footprint=MOLEX_KK_10_HDR
+Change Component Footprint: Designator=C3 Old Footprint=CAPC2012L New Footprint=CAPC1608L
+Change Component Footprint: Designator=D1 Old Footprint=SMC New Footprint=DO-214AA_SCL
+Change Component Comment : Designator=C3 Old Comment=4.7uF New Comment=10uF
+Change Component Comment : Designator=R11 Old Comment=10K New Comment=2K2
+Change Component Comment : Designator=R12 Old Comment=10K New Comment=2K2
+Change Component Comment : Designator=R13 Old Comment=10K New Comment=2K2
+Change Component Comment : Designator=R14 Old Comment=10K New Comment=2K2
+Change Component Comment : Designator=H4 Old Comment=JB_IDC_BOX_HDR_20 New Comment=10 Pin Molex KK Hdr
+Change Component Comment : Designator=D1 Old Comment=SCHOTTKY 30V 4A New Comment=DIODE ZENER 5.6V
+Change component parameters: Designator = "H4"; Footprint = "MOLEX_KK_10_HDR"; UniqueID = "\ZGZOSGMF"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer PN"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Storage Location"; Value = "ECE Dept Store"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier"; Value = "ECE Dept"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 2"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = "1756828"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 2"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "10 Pin Molex KK Hdr"; VariantName = "[No Variations]"
+Added Component: Designator=L3(INDC3216L)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "DC Current Rating"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DC Resistance Max"; Value = "0.08"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ferrite Case Style"; Value = "1206 ^3216 Metric]"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ferrite Mounting"; Value = "SMD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Frequency Range"; Value = "50MHz to 1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Impedance"; Value = "600"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Impedance Tolerance"; Value = "± 25%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "FAIR-RITE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "2512066017Y1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer PN"; Value = "2512066017Y1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Storage Location"; Value = "PCB Assembly WS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "ECE Dept"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "1612060"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1A max, Idc 0.3R,"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=C3-1
+Added Pin To Net: NetName=5V Pin=C25-2
+Added Pin To Net: NetName=5V Pin=C26-2
+Added Pin To Net: NetName=NetC24_2 Pin=D1-1
+Added Pin To Net: NetName=PB1 Pin=H4-2
+Added Pin To Net: NetName=PB2 Pin=H4-3
+Added Pin To Net: NetName=PB3 Pin=H4-4
+Added Pin To Net: NetName=PB13 Pin=H4-5
+Added Pin To Net: NetName=PB14 Pin=H4-6
+Added Pin To Net: NetName=PA23 Pin=H4-7
+Added Pin To Net: NetName=PA27 Pin=H4-8
+Added Pin To Net: NetName=PA4 Pin=H4-9
+Added Pin To Net: NetName=PA6 Pin=H4-10
+Added Pin To Net: NetName=VBATT Pin=H6-2
+Added Pin To Net: NetName=GND Pin=J1-2
+Added Pin To Net: NetName=GND Pin=J2-2
+Added Pin To Net: NetName=5V Pin=L2-2
+Added Pin To Net: NetName=3V3_RAD Pin=L3-2
+Added Pin To Net: NetName=IMU_SEL Pin=R11-1
+Added Pin To Net: NetName=VDDIO Pin=R11-2
+Added Pin To Net: NetName=SWCLK Pin=R12-1
+Added Pin To Net: NetName=VDDIO Pin=R12-2
+Added Pin To Net: NetName=SWDIO Pin=R13-1
+Added Pin To Net: NetName=VDDIO Pin=R13-2
+Added Pin To Net: NetName=GND Pin=R14-2
+Added Pin To Net: NetName=NetH7_2 Pin=R16-1
+Added Pin To Net: NetName=5V Pin=R16-2
+Added Pin To Net: NetName=5V Pin=U5-5
+Added Pin To Net: NetName=LED_OUT Pin=U6-3
+Added Pin To Net: NetName=LED_STRIP_EN Pin=U6-4
+Added Pin To Net: NetName=NetC3_2 Pin=C3-2
+Added Pin To Net: NetName=NetC3_2 Pin=R15-1
+Added Pin To Net: NetName=NetC3_2 Pin=U7-1
+Added Net: Name=NetC3_2
+Added Pin To Net: NetName=NetD1_2 Pin=D1-2
+Added Pin To Net: NetName=NetD1_2 Pin=Q1-1
+Added Pin To Net: NetName=NetD1_2 Pin=R18-2
+Added Net: Name=NetD1_2
+Added Pin To Net: NetName=NetL3_1 Pin=L3-1
+Added Pin To Net: NetName=NetL3_1 Pin=R15-2
+Added Net: Name=NetL3_1
+Added Pin To Net: NetName=NetR14_1 Pin=R14-1
+Added Pin To Net: NetName=NetR14_1 Pin=U4-9
+Added Net: Name=NetR14_1
+Added Pin To Net: NetName=RADIO_INT Pin=U1-37
+Added Pin To Net: NetName=RADIO_INT Pin=U7-8
+Added Net: Name=RADIO_INT
+Added Pin To Net: NetName=VBUS Pin=H1-1
+Added Pin To Net: NetName=VBUS Pin=R1-2
+Added Pin To Net: NetName=VBUS Pin=TP5-1
+Added Net: Name=VBUS
+Added Member To Class: ClassName=Radio Member=Component L3 1A max, Idc 0.3R,
+Added Room: Name=IMU
+Added Room: Name=MCU
+Added Room: Name=Power
+Added Room: Name=Radio
